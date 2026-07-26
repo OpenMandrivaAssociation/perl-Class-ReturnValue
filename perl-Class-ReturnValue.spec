@@ -1,15 +1,13 @@
 %define upstream_name    Class-ReturnValue
-%define upstream_version 0.55
-
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Version:	0.55
+Release:	6
 
 Summary:	Class-ReturnValue module for perl 
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Class/%{upstream_name}-%{upstream_version}.tar.bz2
+Url:		https://metacpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Class/%{upstream_name}-%{version}.tar.bz2
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -21,7 +19,7 @@ This module provides a return-value object that lets you treat it as as a
 boolean, array or object.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -46,9 +44,7 @@ make test
 
 * Sat Aug 01 2009 Jérôme Quelin <jquelin@mandriva.org> 0.550.0-1mdv2011.0
 + Revision: 406876
-- rebuild using %%perl_convert_version
-
-* Wed Jul 30 2008 Thierry Vignaud <tv@mandriva.org> 0.55-3mdv2009.0
+- rebuild using %0.55 Wed Jul 30 2008 Thierry Vignaud <tv@mandriva.org> 0.55-3mdv2009.0
 + Revision: 256029
 - rebuild
 
